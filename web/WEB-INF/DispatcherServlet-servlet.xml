@@ -23,8 +23,21 @@
 
     <!--    配置拦截器-->
     <mvc:interceptors>
+
         <!--    全局拦截器-->
-        <bean class="waq.hbwl.intercepter.CustomerInter"/>
+        <!--    <bean class="waq.hbwl.intercepter.CustomerInter1"/>-->
+
+        <!--    拦截器1-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="waq.hbwl.intercepter.CustomerInter1"/>
+        </mvc:interceptor>
+
+        <!--    拦截器2-->
+        <mvc:interceptor>
+            <mvc:mapping path="/hello"/>
+            <bean class="waq.hbwl.intercepter.CustomerInter2"/>
+        </mvc:interceptor>
     </mvc:interceptors>
 
 </beans>
